@@ -1,51 +1,44 @@
-<!doctype html>
-<html>
-    <head>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>👨‍💻  Marco Gargano - GitHub Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            color: #000;
+            background-color: #eee;
+        }
+        .paper {
+            background-color: #fff;
+            border-radius: 8px;
+            text-align: left;
+            max-width: 500px;
+            margin: 8rem auto;
+            padding: 3rem 4rem;
+            line-height: 1.9rem;
+            box-shadow: 20px -20px 60px 10px rgba(0, 0, 0, .2);
+            transition: all .4s ease-in-out;
+            transform: perspective(80rem) rotateY(18deg) rotateX(17deg);
+        }
+        h2, h3 {
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
+        .paper:hover {
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+            transform: perspective(80rem) rotateY(1deg) rotateX(1deg);
+        }
+  </style>
+</head>
 
-    <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
-        >
-            <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="assets/asset.gltf"
-                ></a-asset-item>
-            </a-assets>
+<body>
+    <div class="paper">
+      <h2>Hi 🖖🤓!</h2>
+      <h3>I'm Marco Gargano and I like this funny stuff...</h3>
+      <img src="img.jpg">
+    </div>
+</body>
 
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker2.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-entity
-                    id="bowser-model"
-                    scale="0.008947635049919151 0.008947635049919151 0.008947635049919151"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    class="clickable"
-                    gesture-handler
-                ></a-entity>
-            </a-marker>
-
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
 </html>
