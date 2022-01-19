@@ -1,3 +1,3 @@
-# arrr teeest
+# 📱 Arrr 3D Teeest
 
-https://ar-js-org.github.io/studio/
+- https://ar-js-org.github.io/studio/
